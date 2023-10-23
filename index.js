@@ -12,12 +12,13 @@ app.get("/", (req, res) => {
 });
 
 app.get("/investing_news", async (req, res) => {
-  response = await webScrapper(req.body.url);
+  console.log("these are the params : " + req.query.url);
+  response = await webScrapper(req.query.url);
   res.send(response);
 });
 
 app.get("/money_control", async (req, res) => {
-  response = await moneyControllerwebScrapper(req.body.url);
+  response = await moneyControllerwebScrapper(req.query.url);
   res.send(response);
 });
 

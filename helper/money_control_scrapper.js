@@ -27,9 +27,12 @@ const moneyControllerwebScrapper = async (url) => {
 
   const parsedHtml = parse(data);
 
-  const arrayOfArticles = parsedHtml
-    .querySelector("#cagetory")
-    .querySelectorAll("li");
+  const categoryElement = parsedHtml.querySelector("#cagetory");
+  const arrayOfArticles = categoryElement?.querySelectorAll("li") || [];
+
+  if (arrayOfArticles.length === 0) {
+    return [];
+  }
 
   arrayOfArticles.forEach((element) => {
     const titleElement = element.querySelector("h2 > a");
