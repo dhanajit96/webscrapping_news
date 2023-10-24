@@ -44,8 +44,6 @@ const webScrapper = async (url) => {
 
     const match = regexPattern.exec(articleLink);
 
-    console.log(match);
-
     const body = element
       .querySelector("div > p")
       ?.innerText?.trim()
@@ -63,7 +61,6 @@ const webScrapper = async (url) => {
       time: time,
     });
   });
-  console.log(url);
   return output;
 };
 

@@ -12,7 +12,6 @@ app.get("/", (req, res) => {
 });
 
 app.get("/investing_news", async (req, res) => {
-  console.log("these are the params : " + req.query.url);
   response = await webScrapper(req.query.url);
   res.send(response);
 });

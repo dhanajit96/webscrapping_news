@@ -44,7 +44,6 @@ const moneyControllerwebScrapper = async (url) => {
 
     const match = regexPattern.exec(articleLink);
 
-    console.log(articleLink);
     // const boodyLink = titleElement?.href;
 
     const body = element.querySelector("p")?.innerText?.trim();
@@ -58,8 +57,6 @@ const moneyControllerwebScrapper = async (url) => {
       time: time,
     });
   });
-
-  console.log(url);
 
   return output;
 };
